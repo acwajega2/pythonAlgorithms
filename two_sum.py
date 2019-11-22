@@ -15,23 +15,26 @@ def two_sum(nums,target):
     index_m = []
     check_sum = 0
     for i in range(len(nums)) : #points to the finst item in the list
+       print(i)
        #print('>>>>'+str(nums[i]))
        #for each item, lets add with items left to it
        for j in range(i-1,-1,-1):
-          #print('#######Item:'+str(nums[i])+'----: other item'+str(nums[j]))
+           print('#######Item:'+str(nums[i])+'----: other item'+str(nums[j]))
            check_sum = nums[i] + nums[j]
            if check_sum == target :
-               if nums.index(nums[i]) not in index_m :
-                   index_m.append(nums.index(nums[i]) )
+               if i not in index_m :
+                 
+                   index_m.append(i)
                
           
       #for each item, lets add with items Right to it  
        for j in range(i+1,len(nums),1):
-           #print('Item:'+str(nums[i])+'----: other item'+str(nums[j]))
+           print('Item:'+str(nums[i])+'----: other item'+str(nums[j]))
            check_sum = nums[i] + nums[j]
            if check_sum == target :
             
-              if nums.index(nums[i]) not in index_m :
-                   index_m.append(nums.index(nums[i]) )
+              if i not in index_m :
+                  
+                   index_m.append(i)
     return index_m
 
